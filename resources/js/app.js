@@ -1,4 +1,5 @@
-import './bootstrap';
+import './bootstrap'; // Laravel Breeze/Inertia
+
 
 import Alpine from 'alpinejs';
 

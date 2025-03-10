@@ -14,6 +14,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('users/list', [UserController::class, 'index'])->name('users.list')->middleware('auth');
+Route::delete('users/{id}', [UserController::class, 'destroy'])->name('users.destroy')->middleware('auth');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

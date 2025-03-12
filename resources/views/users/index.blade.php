@@ -29,19 +29,7 @@
         {{ $users->links() }}
     </div>
 </x-app-layout>
-<script type="module">
-    $(function() {
-        $('.delete').click(function() {
-            $.ajax({
-                    method: "DELETE",
-                    url: `http://shop.test/users/${$(this).data('id')}`,
-                })
-                .done(function(response) {
-                    window.location.reload();
-                })
-                .fail(function(response){
-                    alert("Error");
-                })
-        });
-    });
+<script>
+    const deleteUrl = "{{ url('users') }}/";
 </script>
+@vite(['resources/js/delete.js'])

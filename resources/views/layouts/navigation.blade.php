@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class= border-gray-100 dark:bg-gray-800 dark:border-gray-700">
+<nav x-data="{ open: false }" class=border-gray-100 dark:bg-gray-800 dark:border-gray-700">
     <!-- Primary Navigation Menu -->
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -40,6 +40,10 @@
 
                         <x-dropdown-link :href="route('users.list')">
                             Użytkownicy
+                        </x-dropdown-link>
+
+                        <x-dropdown-link :href="route('product.index')">
+                            Produkty
                         </x-dropdown-link>
 
                         <!-- Authentication -->

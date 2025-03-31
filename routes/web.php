@@ -5,10 +5,11 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WelcomeController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

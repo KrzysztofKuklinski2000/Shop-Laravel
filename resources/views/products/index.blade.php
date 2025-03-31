@@ -7,7 +7,7 @@
             <div class="col-6">
                 <a class="float-right" href="{{ route('product.create') }}">
                     <button class="px-4 py-2 m-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
-                        Button
+                        Nowy
                     </button>
                 </a>
             </div>

@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('product.update', $product->id) }}">
+    <form method="POST" action="{{ route('product.update', $product->id) }}" enctype="multipart/form-data">
         @csrf
 
         <!-- Name -->
@@ -28,6 +28,17 @@
             <x-input-label for="price" :value="__('Cena')" />
             <x-text-input id="price" class="block w-full mt-1" type="number" step="0.01" min="0" name="price" :value=" $product->price" required autocomplete="price" />
             <x-input-error :messages="$errors->get('price')" class="mt-2" />
+        </div>
+
+        <!-- Image -->
+        <div class="mt-4">
+            <x-input-label for="image" :value="__('Zdjęcie')" />
+            <x-text-input id="image" class="block w-full mt-1" type="file" name="image" />
+        </div>
+        <div class="mt-4">
+            <img class="object-cover  w-[200] h-[100px] transition-all duration-300 group-hover:scale-125"
+                src="{{ asset('storage/' . $product->image_path) }}"
+                alt="Zdjęcie produktu" />
         </div>
 
         <div class="flex items-center justify-end mt-4">

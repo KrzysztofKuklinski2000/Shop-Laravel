@@ -23,4 +23,10 @@
         <x-text-input id="price" class="block w-full mt-1" type="number" step="0.01" min="0" name="price" :value=" $product->price" />
     </div>
 
+    <div class="mt-4">
+        <img class="object-cover  w-[200] h-[100px] transition-all duration-300 group-hover:scale-125"
+            src="{{ asset('storage/' . $product->image_path) }}"
+            alt="Zdjęcie produktu" />
+    </div>
+
 </x-guest-layout>

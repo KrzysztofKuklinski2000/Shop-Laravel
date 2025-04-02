@@ -34,6 +34,7 @@
         <div class="mt-4">
             <x-input-label for="image" :value="__('Zdjęcie')" />
             <x-text-input id="image" class="block w-full mt-1" type="file" name="image" />
+            <x-input-error :messages="$errors->get('image')" class="mt-2" />
         </div>
         <div class="mt-4">
             <img class="object-cover  w-[200] h-[100px] transition-all duration-300 group-hover:scale-125"

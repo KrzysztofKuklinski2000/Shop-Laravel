@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreProductRequest;
 use Illuminate\Foundation\Exceptions\Renderer\Exception;
-use Illuminate\Http\JsonResponse;
 
 
 class ProductController extends Controller
@@ -31,9 +32,9 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(StoreProductRequest $request): RedirectResponse
     {
-        $product = new Product($request->all());
+        $product = new Product($request->validated());
         if ($request->hasFile('image')) {
             $product->image_path = $request->file('image')->store('products');
         }
@@ -60,9 +61,9 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product): RedirectResponse
+    public function update(StoreProductRequest $request, Product $product): RedirectResponse
     {
-        $product->fill($request->all());
+        $product->fill($request->validated());
         if($request->hasFile('image')) {
             $product->image_path = $request->file('image')->store('products');
         }

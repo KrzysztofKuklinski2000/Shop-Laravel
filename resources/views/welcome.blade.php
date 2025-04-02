@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-guest-layout>
     <section class="w-full py-12 bg-white sm:py-16 lg:py-20">
         <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
             <div class="max-w-md mx-auto text-center">
@@ -63,4 +63,4 @@
         </div>
     </section>
 
-</x-app-layout>
+</x-guest-layout>

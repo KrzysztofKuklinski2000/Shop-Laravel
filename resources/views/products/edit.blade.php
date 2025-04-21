@@ -30,6 +30,18 @@
             <x-input-error :messages="$errors->get('price')" class="mt-2" />
         </div>
 
+        <!-- Category -->
+        <div class="mt-4">
+            <x-input-label for="category" :value="__('Kategoria')" />
+            <select id="category" class="block mt-1" type="number" step="0.01" min="0" name="category_id">
+                <option value="">Brak</option>
+                @foreach($categories as $category)
+                <option value="{{ $category->id }}" @if($product->isSelectedCategory($category->id)) selected @endif>{{ $category->name }}</option>
+                @endforeach
+            </select>
+            <x-input-error :messages="$errors->get('category')" class="mt-2" />
+        </div>
+
         <!-- Image -->
         <div class="mt-4">
             <x-input-label for="image" :value="__('Zdjęcie')" />

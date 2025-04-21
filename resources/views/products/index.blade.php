@@ -21,6 +21,7 @@
                         <th scope="col">Opis</th>
                         <th scope="col">Ilosc</th>
                         <th scope="col">Cena</th>
+                        <th scope="col">Kategoria</th>
                         <th scope="col">Akcje</th>
                     </tr>
                 </thead>
@@ -32,6 +33,7 @@
                         <td>{{ $product->description }}</td>
                         <td>{{ $product->amount}}</td>
                         <td>{{ $product->price}}</td>
+                        <td>{{ $product->category->name ?? "Brak"}}</td>
                         <td>
                             <a href="{{route('product.edit', $product->id)}}">
                                 <button class="btn btn-success btn-sm">E</button>
